@@ -1,12 +1,22 @@
 import { useParams } from 'react-router-dom';
 import { programmations } from '../database/db';
+import { useEffect, useState } from 'react';
 
 export default function Details() {
-    const { id } = useParams();
+    const { id } = useParams();                                                              // UseParams per ottenere l'id dalla URL
+    const [programmation, setProgrammation] = useState(null);                               // UseState per memorizzare i dettagli della programmazione
     
-    const programmation = programmations.find(prog => prog.id === parseInt(id));
+    useEffect(() => {                                                                       // UseEffect per eseguire il codice al montaggio del componente o quando l'id cambia
+        const programmationId = programmations.find(prog => prog.id === parseInt(id));
+        setProgrammation(programmationId);
+    }, [id]);                                                                             // Aggiungi id come dipendenza per eseguire l'effetto quando cambia
+ 
+    if (!programmation) {
+        return <div>Nessun risultato trovato</div>;
+    };
     console.log(programmation);
-    return (
+
+    return (    
         <>
             <div>
                 <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -36,7 +46,7 @@ export default function Details() {
                         <tr>
                             <th colSpan="2" style={{textAlign:"center", fontSize:"35px", color:"#d20707ff", wordWrap:"break-word"}}>Dettagli su: {programmation.title}</th>
                         </tr>
-                    </thead> 
+                    </thead>
                     <tbody>
                         <tr>
                             <td style={{ color:"#d20707ff", fontSize:"20px", wordWrap:"break-word"}}>Descrizione:</td>
