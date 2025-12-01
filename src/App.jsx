@@ -1,5 +1,10 @@
-import { BrowserRouter ,Routes, Route } from 'react-router-dom';
+//# IMPORTO BOOTSTRAP
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+//# IMPORTO REACT ROUTER DOM
+import { BrowserRouter ,Routes, Route } from 'react-router-dom';
+
+//# IMPORTO DATABASE E COMPONENTI
 import { programmations } from '../database/db.js';
 import HomePage from './HomePage.jsx';
 import Details from './Details.jsx';

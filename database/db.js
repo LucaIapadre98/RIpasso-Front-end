@@ -433,5 +433,36 @@ export const programmations = [
         image: "../images/react-memo.jpg",
         utility: "React.memo è essenziale per ottimizzare le prestazioni dei componenti funzionali in React, riducendo i rendering inutili e migliorando l'efficienza complessiva dell'applicazione.",
         notUtility: "Non è utilizzato per componenti che cambiano frequentemente o per operazioni che non richiedono ottimizzazione delle prestazioni."
+    },
+    {
+        id: 29,
+        title:" Higher Order Component (HOC) in React",
+        strument: "React",
+        category: "Frontend",
+        description: "Un Higher Order Component (HOC) in React è una funzione che prende un componente e ne restituisce un nuovo componente con funzionalità aggiuntive. Gli HOC sono utilizzati per riutilizzare la logica tra componenti, consentendo di condividere comportamenti comuni senza duplicare il codice. Un HOC può avvolgere un componente esistente, aggiungendo funzionalità come la gestione dello stato, l'accesso ai dati o la manipolazione delle props. Gli HOC sono una tecnica avanzata in React che promuove la composizione e la modularità del codice nelle applicazioni React.",
+        example: [
+            {
+                code: "function withLogging(WrappedComponent) { return function(props) { console.log('Rendering', WrappedComponent.name); return <WrappedComponent {...props} />; }; }" 
+            }
+        ],
+        image: "../images/HOC.jpg",
+        utility: "Gli Higher Order Components sono fondamentali per riutilizzare la logica tra componenti in React, migliorando la modularità e la manutenzione del codice.",
+        notUtility: "Non sono utilizzati per componenti che non richiedono funzionalità condivise o per operazioni che non beneficiano della composizione."
+        
+    },
+    {
+        id: 30,
+        title:" Database MySQL",
+        strument: "Database",
+        category: "Backend",
+        description: "MySQL è un DBMS (Database Management System) relazionale basato su SQL (Structured Query Language). È uno dei database più usati al mondo grazie alla sua velocità, stabilità, facilità d’uso e al fatto che è disponibile anche in versione open-source. Viene utilizzato per applicazioni web, sistemi gestionali, applicazioni enterprise, e in generale per qualsiasi sistema che deve salvare, organizzare e interrogare dati strutturati. In un database relazionale (come MySQL), i dati vengono distribuiti su più tabelle per evitare duplicazioni e mantenere ordine e coerenza. Le relazioni servono a collegare tra loro queste tabelle tramite chiavi: primarie (primary key o PK) identifica univocamente un record e chiavi esterne (foreign key o FK) campo in una tabella che punta alla PK di un'altra. Con le chiavi esterne si possono creare relazioni tra tabelle diverse, ad esempio per rappresentare associazioni uno-a-uno, uno-a-molti o molti-a-molti.",
+        example: [
+            {
+                code: "CREATE TABLE Users ( id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(100), email VARCHAR(100) );"
+            }
+        ],
+        image: "../images/MySQL.jpg",
+        utility: "MySQL è essenziale per la gestione efficiente dei dati in applicazioni di varie dimensioni, offrendo velocità, affidabilità e supporto per transazioni.",
+        notUtility: "Non è adatto per applicazioni che richiedono database non relazionali o per scenari in cui la scalabilità orizzontale è una priorità assoluta."
     }
 ]
